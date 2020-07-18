@@ -69,9 +69,10 @@ export default function Pricing() {
                     >
                       Expenses such as rail/air travel, sample purchasing,
                       shipping of goods, and other such expenses for which extra
-                      amount needs to be paid will be charged seperately. Such
-                      overhead expenses will be billed separately. Contact Us
-                      for more info.
+                      amount needs to be paid will be charged seperately. Travel
+                      expenses waived in certain locations. Such overhead
+                      expenses will be billed separately. Contact Us for more
+                      info.
                     </div>
                   ) : null}
                 </div>

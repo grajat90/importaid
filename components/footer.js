@@ -54,9 +54,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/">
-                  <a style={{ textDecoration: "none" }}>Sitemap</a>
-                </Link>
+                <a href="/sitemap.xml" style={{ textDecoration: "none" }}>
+                  Sitemap
+                </a>
               </li>
             </ul>
           </div>

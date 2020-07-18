@@ -12,7 +12,8 @@ export default function Hero({ vw }) {
         business get contacts expand outreach create reach reduce expense cheap
         economic field services service sector meet people delivery check follow
         up factories industries businesses Import Export from india get local
-        help local people from india for business
+        help local people from india for business get work done on time punctual
+        local expertise local people work round the clock
       </div>
       <div style={styles.container}>
         <div style={{ display: "flex" }}>

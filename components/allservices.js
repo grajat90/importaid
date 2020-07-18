@@ -1,35 +1,30 @@
 import { useState, useEffect } from "react";
 import { ReactSVG } from "react-svg";
-
+import data from "../public/data.json";
 export default function AllServices() {
   const [selected, setSelected] = useState(0);
   const select = (idx) => {
     setSelected(idx);
     setDetails((prev) => ({
       title: items[idx],
-      text: prev.text,
+      text: data[items[idx]],
     }));
   };
   const [details, setDetails] = useState({ title: null, text: null });
-  const items = ["Fieldwork", "Sample Collection", "And much more"];
+  const items = [
+    "Fieldwork",
+    "Sample Collection",
+    "Sample Delivery",
+    "Documentation",
+    "Inspection",
+    "Dispatch",
+    "Follow Up",
+    "Quality Check and Control",
+    "Market Research",
+    "And much more",
+  ];
   useEffect(() => {
-    setDetails({
-      title: "Product",
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut\
-      dolor sapien. Pellentesque vel scelerisque libero. Phasellus vehicula,\
-      nibh ac convallis pellentesque, massa urna blandit dolor, ac gravida\
-      leo justo nec ante. Proin eu auctor nunc. Fusce sollicitudin auctor\
-      venenatis. Pellentesque lobortis vulputate odio luctus placerat. Cras\
-      eget est euismod ex gravida laoreet at quis tortor. Curabitur accumsan\
-      sapien at libero mollis imperdiet. In mollis, ex vel dictum congue,\
-      augue arcu consectetur neque, nec dictum metus nisi vitae leo. Nam nec\
-      metus leo. Nullam efficitur nulla id quam hendrerit ultrices. Aliquam\
-      erat volutpat. Nam aliquam odio velit, accumsan convallis massa luctus\
-      finibus. Nulla feugiat nec elit sit amet lobortis. Pellentesque\
-      ullamcorper metus nisl, ut pretium eros vulputate a. Proin tortor mi,\
-      rutrum sed tortor eget, euismod blandit arcu.",
-    });
+    select(0);
   }, []);
   return (
     <>
@@ -80,25 +75,21 @@ const styles = {
     fontWeight: 500,
   },
   item: {
+    padding: "30px 0px 30px 0px",
     cursor: "pointer",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#fff",
     width: "20vw",
-    paddingTop: 10,
-    width: "inherit",
-    paddingBottom: 10,
   },
   itemselected: {
+    padding: "30px 0px 30px 0px",
     cursor: "default",
-    paddingTop: 10,
-    paddingBottom: 10,
     display: "flex",
-    width: "inherit",
+    width: "20vw",
     justifyContent: "center",
     alignItems: "center",
-    width: "20vw",
     backgroundColor: "#f2f2f2",
   },
   info: {
