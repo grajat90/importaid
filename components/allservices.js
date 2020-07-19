@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { ReactSVG } from "react-svg";
 import data from "../public/data.json";
 export default function AllServices() {
   const [selected, setSelected] = useState(0);

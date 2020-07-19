@@ -1,16 +1,45 @@
 import Link from "next/link";
 import { useState } from "react";
 import ReactModal from "react-modal";
+import emailjs from "emailjs-com";
 export default function MessageButton() {
   const [hover, setHover] = useState(false);
   const [open, setOpen] = useState(false);
   const [from, setFrom] = useState(null);
   const [text, setText] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
   const [sendhover, setSendhover] = useState(false);
   const submit = () => {
-    setOpen(false);
-    setHover(false);
-    setSendhover(false);
+    if (from == null || from == "" || from == " ") {
+      setErrorMessage("From Field Cannot be blank");
+      return;
+    } else if (text == null || text == "" || text == " ") {
+      setErrorMessage("You can't send a blank message");
+      return;
+    } else {
+      setErrorMessage(null);
+      setOpen(false);
+      setHover(false);
+      setSendhover(false);
+      emailjs
+        .send(
+          "amazon_ses",
+          "importaidTemplate",
+          {
+            message_from: from,
+            message_text: text,
+          },
+          "user_qvXOE3Iet4nIUnVP2Szep"
+        )
+        .then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+          },
+          function (error) {
+            console.log("FAILED...", error);
+          }
+        );
+    }
   };
   return (
     <>
@@ -43,7 +72,7 @@ export default function MessageButton() {
             name="from"
             placeholder="Your Phone or Email"
             value={from}
-            onChange={({ value }) => setFrom(value)}
+            onChange={(event) => setFrom(event.target.value)}
           />
           <textarea
             aria-multiline="true"
@@ -52,16 +81,17 @@ export default function MessageButton() {
             name="text"
             placeholder="Your Message"
             value={text}
-            onChange={({ value }) => setText(value)}
+            onChange={(event) => setText(event.target.value)}
           />
           <div
             style={{
               display: "flex",
               width: "inherit",
               justifyContent: "flex-end",
-              alignContent: "flex-end",
+              alignItems: "center",
             }}
           >
+            <div style={styles.error}>{errorMessage}</div>
             <div
               style={sendhover ? styles.sendactive : styles.sendinactive}
               onClick={() => submit()}
@@ -172,5 +202,10 @@ const styles = {
     alignItems: "center",
     fontSize: 20,
     fontWeight: 500,
+  },
+  error: {
+    color: "#ff0033",
+    marginRight: 20,
+    fontWeight: 600,
   },
 };
