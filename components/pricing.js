@@ -1,7 +1,7 @@
 import { ReactSVG } from "react-svg";
 import Link from "next/link";
 import { useState } from "react";
-
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 export default function Pricing() {
   const [visible, setVisible] = useState(false);
   return (
@@ -34,9 +34,10 @@ export default function Pricing() {
                   <span>
                     &nbsp;&nbsp;On demand support, fieldwork, market research
                     and all our services.{" "}
-                    <Link href="/">
+                    <ScrollLink to="allservices" smooth={true}>
                       <a
                         style={{
+                          cursor: "pointer",
                           fontSize: 12,
                           display: "flex",
                           justifyContent: "flex-end",
@@ -45,11 +46,12 @@ export default function Pricing() {
                           float: "right",
                           clear: "both",
                           fontWeight: 500,
+                          textDecoration: "underline",
                         }}
                       >
                         See all services
                       </a>
-                    </Link>
+                    </ScrollLink>
                   </span>
                 </div>
                 <div style={styles.item}>

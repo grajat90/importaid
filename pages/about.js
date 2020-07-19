@@ -2,6 +2,7 @@ import Head from "next/head";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import React, { Component } from "react";
+import Link from "next/link";
 export default class Home extends Component {
   state = {
     width: 0,
@@ -34,7 +35,7 @@ export default class Home extends Component {
           <Header selected={3} />
           <div
             style={{
-              marginTop: 100,
+              marginTop: 80,
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -68,53 +69,42 @@ export default class Home extends Component {
               }}
             >
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                vel eros vel ipsum lobortis hendrerit a ut nibh. Vestibulum
-                ultrices ex id venenatis accumsan. Nullam vel purus ultrices
-                lacus eleifend ultricies et in dolor. Cras finibus ex at dui
-                iaculis, id mattis mi malesuada. Phasellus accumsan risus a
-                dolor lobortis sodales. Duis facilisis accumsan erat vitae
-                iaculis. Maecenas tempor eu leo nec sodales.
+                ImportAid started as a vision by our founder that no company,
+                however small should feel at a disadvantage when it comes to
+                expansion. Our team works round the clock to ensure that you can
+                focus on your core business needs, while we handle the importing
+                side of things from India. That includes fieldwork, samples,
+                inspections, documentation, delivery of goods, and{" "}
+                <Link href="/">
+                  <a style={{ color: "#000" }}>much more</a>
+                </Link>
+                .
               </p>
+
               <p>
-                {" "}
-                Curabitur vulputate euismod lobortis. Sed mi est, porttitor a
-                dolor quis, auctor vestibulum leo. Donec vestibulum odio vel
-                sapien aliquet, at blandit mauris dignissim. Nam dictum ut nulla
-                suscipit scelerisque. Proin semper mauris eros, at tempus sem
-                pretium id. Aliquam in quam porta, imperdiet nulla sodales,
-                facilisis nibh. Quisque lacus felis, consectetur a ligula ut,
-                facilisis condimentum nulla. Vestibulum ante ipsum primis in
-                faucibus orci luctus et ultrices posuere cubilia curae; Aliquam
-                erat volutpat.
+                We believe in providing the best quality of sources, curated
+                especially for your business needs at prices that won’t hinder
+                your expansion plans.{" "}
               </p>
+              <br />
               <p>
-                {" "}
-                Cras augue massa, euismod ac nunc quis, consectetur sodales
-                quam. Nam vitae aliquam elit, sit amet blandit elit.
-                Pellentesque nec magna sit amet dolor porttitor interdum eu
-                vitae ante. Integer quis elit porttitor arcu pulvinar placerat a
-                ut sem. Vivamus bibendum consequat nisl nec fringilla.
-                Vestibulum non varius tortor, sed lacinia ex. Donec vestibulum
-                orci elit, lacinia vulputate libero fermentum finibus. Duis ut
-                nibh egestas, tempus purus quis, elementum lorem. Quisque lectus
-                orci, rhoncus vel nulla nec, bibendum rutrum nisi. In commodo
-                lectus gravida fringilla bibendum. Cras dolor mauris, consequat
-                nec vehicula auctor, hendrerit nec erat.
+                <h3>Our Values</h3>
+                <ul>
+                  <li>Trust</li>
+                  <li>Collaboration</li>
+                  <li>Excellence</li>
+                  <li>Consistency</li>
+                </ul>
               </p>
+              <br />
               <p>
-                {" "}
-                Vestibulum vel metus ullamcorper diam molestie pellentesque.
-                Praesent volutpat nulla ac nunc tempor varius. Cras ornare
-                libero nec velit luctus, et fringilla nisl gravida. Fusce eu
-                imperdiet ex, ac bibendum felis. In tincidunt viverra nunc,
-                vitae pulvinar velit commodo ut. Fusce bibendum, lacus quis
-                dignissim suscipit, magna tortor condimentum felis, ac aliquet
-                lorem eros in ipsum. In faucibus sem at vestibulum imperdiet.
-                Proin viverra porta dui ac venenatis. Donec non mauris gravida,
-                vestibulum odio nec, mollis nunc. Pellentesque id est sed mauris
-                finibus ullamcorper. In id sapien luctus, tincidunt nibh
-                ullamcorper, ultrices lorem.
+                <h3>Mission</h3>
+                <ul>
+                  <li>Global partnership</li>
+                  <li>Sustainable Business Expansion </li>
+                  <li>Accelerating Business Growth</li>
+                  <li>Delivering Results</li>
+                </ul>
               </p>
             </div>
           </div>
