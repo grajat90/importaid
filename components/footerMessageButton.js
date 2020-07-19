@@ -1,8 +1,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import ReactModal from "react-modal";
-import emailjs from "emailjs-com";
-
+const AWS = require("aws-sdk");
+AWS.config.update({
+  accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.NEXT_PUBLIC_ACCESS_KEY,
+  region: process.env.NEXT_PUBLIC_AWS_DEFAULT_REGION,
+});
+const ses = new AWS.SES({ apiVersion: "2010-12-01" });
 export default function MessageButton({ toastshow }) {
   const [hover, setHover] = useState(false);
   const [open, setOpen] = useState(false);
@@ -22,25 +27,31 @@ export default function MessageButton({ toastshow }) {
       setOpen(false);
       setHover(false);
       setSendhover(false);
-      emailjs
-        .send(
-          "amazon_ses",
-          "importaidTemplate",
-          {
-            message_from: from,
-            message_text: text,
-          },
-          "user_qvXOE3Iet4nIUnVP2Szep"
-        )
-        .then(
-          function (response) {
-            toastshow();
-            console.log("SUCCESS!", response.status, response.text);
-          },
-          function (error) {
-            console.log("FAILED...", error);
-          }
-        );
+      var senddata =
+        '{ "contact":"' +
+        from.toString() +
+        '","message":"' +
+        text.toString() +
+        '"}';
+      var params = {
+        Destination: {
+          /* required */ ToAddresses: ["private@importaid.com"],
+        },
+        Source:
+          "importaid Website Messenger<private@importaid.com>" /* required */,
+        Template: "importaidTemplate" /* required */,
+        TemplateData: senddata /* required */,
+        SourceArn:
+          "arn:aws:ses:ap-south-1:117335449492:identity/private@importaid.com",
+      };
+      ses.sendTemplatedEmail(params, function (err, data) {
+        if (err) console.log(err, err.stack);
+        // an error occurred
+        else {
+          console.log(data);
+          toastshow();
+        } // successful response
+      });
     }
   };
   return (

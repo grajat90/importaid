@@ -1,0 +1,8 @@
+{
+  "Template": {
+    "TemplateName": "importaidTemplate",
+    "SubjectPart": "New message from {{contact}}",
+    "HtmlPart": "<h1>Hi you have a new message,</h1><p>The sender's contact is </p><h3>{{contact}}</h3><p>Message:</p><p>{{message}}</p>",
+    "TextPart": "Message from {{contact}},\r\nMessage:\r\n{{message}}"
+  }
+}
