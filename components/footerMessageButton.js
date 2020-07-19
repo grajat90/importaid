@@ -37,8 +37,7 @@ export default function MessageButton({ toastshow }) {
         Destination: {
           /* required */ ToAddresses: ["private@importaid.com"],
         },
-        Source:
-          "importaid Website Messenger<private@importaid.com>" /* required */,
+        Source: "New client message <private@importaid.com>" /* required */,
         Template: "importaidTemplate" /* required */,
         TemplateData: senddata /* required */,
         SourceArn:
