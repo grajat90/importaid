@@ -5,6 +5,7 @@ import Hero from "../components/hero";
 import React, { Component } from "react";
 import Pricing from "../components/pricing";
 import AllServices from "../components/allservices";
+import { ToastContainer, toast } from "react-toastify";
 export default class Home extends Component {
   state = {
     width: 0,
@@ -17,6 +18,16 @@ export default class Home extends Component {
     });
   }
   render() {
+    const toastshow = () =>
+      toast.success("📬 Message Sent Successfully", {
+        position: "bottom-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     return (
       <body style={{ margin: 0 }}>
         <div
@@ -63,7 +74,7 @@ export default class Home extends Component {
           <Hero vw={this.state.width} />
           <Pricing />
           <AllServices />
-          <Footer />
+          <Footer toastshow={toastshow} />
         </div>
       </body>
     );

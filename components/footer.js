@@ -3,9 +3,10 @@ import { ReactSVG } from "react-svg";
 import MessageButton from "./footerMessageButton";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { useRouter } from "next/router";
-
-export default function Footer() {
+import { ToastContainer, toast } from "react-toastify";
+export default function Footer({ toastshow }) {
   const router = useRouter();
+
   return (
     <footer style={styles.footer} id="footer">
       <div style={styles.container}>
@@ -103,7 +104,7 @@ export default function Footer() {
               </a>
             </div>
             <div>
-              <MessageButton />
+              <MessageButton toastshow={toastshow} />
             </div>
           </div>
         </div>

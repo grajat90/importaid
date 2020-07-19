@@ -2,7 +2,8 @@ import Link from "next/link";
 import { useState } from "react";
 import ReactModal from "react-modal";
 import emailjs from "emailjs-com";
-export default function MessageButton() {
+
+export default function MessageButton({ toastshow }) {
   const [hover, setHover] = useState(false);
   const [open, setOpen] = useState(false);
   const [from, setFrom] = useState(null);
@@ -33,6 +34,7 @@ export default function MessageButton() {
         )
         .then(
           function (response) {
+            toastshow();
             console.log("SUCCESS!", response.status, response.text);
           },
           function (error) {
