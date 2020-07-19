@@ -23,11 +23,6 @@ export default class Home extends Component {
           style={{ width: this.state.width, padding: 0, fontFamily: "Raleway" }}
         >
           <Head>
-            <link rel="shortcut icon" href="/favicon.ico" />
-            <link
-              href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap"
-              rel="stylesheet"
-            />
             <title>importaid. - Privacy Policy</title>
           </Head>
           <Header selected={null} />

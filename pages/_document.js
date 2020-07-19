@@ -7,6 +7,37 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          <link rel="shortcut icon" href="/favicon.ico" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+          />
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <meta
+            name="description"
+            content="Import Services in India. Have our team on field getting your work done locally and on time."
+          ></meta>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+          ></meta>
+          <meta
+            name="twitter:card"
+            value="Import Services in India. Have our team on field getting your work done locally and on time."
+          ></meta>
+
+          <meta property="og:title" content="importaid" />
+          <meta property="og:type" content="article" />
+          <meta property="og:url" content="http://www.importaid.com/" />
+          <meta
+            property="og:image"
+            content="http://importaid.com/mainlogo.jpg"
+          />
+          <meta property="og:site_name" content="importaid.com" />
+          <meta
+            property="og:description"
+            content="Import Services in India. Have our team on field getting your work done locally and on time."
+          />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
