@@ -35,7 +35,7 @@ export default function MessageButton({ toastshow }) {
         '"}';
       var params = {
         Destination: {
-          /* required */ ToAddresses: ["private@importaid.com"],
+          ToAddresses: ["private@importaid.com"],
         },
         Source: "New client message <private@importaid.com>" /* required */,
         Template: "importaidTemplate" /* required */,
