@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
           <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
           <meta
             name="description"
-            content="Import Services in India. Have our team on field getting your work done locally and on time. Fieldwork, inspections, market research and more at economical rates."
+            content="Import Assistance Services in India. Have our team on field getting your work done locally and on time. Fieldwork, inspections, market research and more at economical rates."
           />
           <meta
             name="viewport"
@@ -23,7 +23,7 @@ export default class MyDocument extends Document {
           />
           <meta
             name="twitter:card"
-            value="Import Services in India. Have our team on field getting your work done locally and on time. Fieldwork, inspections, market research and more at economical rates."
+            value="Import Assistance Services in India. Have our team on field getting your work done locally and on time. Fieldwork, inspections, market research and more at economical rates."
           />
 
           <meta property="og:title" content="importaid" />
@@ -36,7 +36,7 @@ export default class MyDocument extends Document {
           <meta property="og:site_name" content="importaid.com" />
           <meta
             property="og:description"
-            content="Import Services in India. Have our team on field getting your work done locally and on time. Fieldwork, inspections, market research and more at economical rates."
+            content="Import Assistance Services in India. Have our team on field getting your work done locally and on time. Fieldwork, inspections, market research and more at economical rates."
           />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script

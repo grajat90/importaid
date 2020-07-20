@@ -6,11 +6,17 @@ export default function Hero({ device }) {
     <>
       <div style={styles.bgKeyWords}>
         {/* Keywords */}
-        Import Export Help Aid We help you Fieldwork Ideas Expansion Build
-        business get contacts expand outreach create reach reduce expense cheap
-        economic field services service sector meet people delivery check follow
-        up factories industries businesses Import Export from india get local
-        help local people from india for business get work done on time punctual
+        Importaid assistance import help assistance local service imported all
+        over india import from india to anywhere in the world importing from
+        india importing pharmaceuticals raw materials importaid.com imported.com
+        import.com import sercives www.importaid.com business development
+        business expansion impact online import service fieldwork expert from
+        india talk to people negotiate invest factories markets Import Export
+        Help Aid We help you Fieldwork Ideas Expansion Build business get
+        contacts expand outreach create reach reduce expense cheap economic
+        field services service sector meet people delivery check follow up
+        factories industries businesses Import Export from india get local help
+        local people from india for business get work done on time punctual
         local expertise local people work round the clock
       </div>
       <div style={styles.container}>
