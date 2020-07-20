@@ -3,7 +3,15 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { useState } from "react";
-export default function Header({ selected }) {
+import HeaderMobile from "./headermobile";
+export default function Header({ device, width, selected }) {
+  if (device == "mobile") {
+    return (
+      <>
+        <HeaderMobile width={width} />
+      </>
+    );
+  }
   const [inpage, setInpage] = useState(null);
   const router = useRouter();
   return (

@@ -10,10 +10,19 @@ export default class Home extends Component {
     width: 0,
     vh: 0,
   };
+  constructor(props) {
+    super(props);
+    this.updateLayout = this.updateLayout.bind(this);
+  }
   componentDidMount() {
+    this.updateLayout();
+    window.addEventListener("resize", this.updateLayout());
+  }
+  updateLayout() {
     this.setState({
       width: window.innerWidth,
-      vh: window.innerHeight - 20,
+      height: window.innerHeight,
+      device: window.innerWidth <= 768 ? "mobile" : "desktop",
     });
   }
   render() {
@@ -25,7 +34,11 @@ export default class Home extends Component {
           <Head>
             <title>importaid. - Terms and Conditions</title>
           </Head>
-          <Header selected={null} />
+          <Header
+            selected={null}
+            width={this.state.width}
+            device={this.state.device}
+          />
           <div
             style={{
               margin: 30,
@@ -365,7 +378,7 @@ export default class Home extends Component {
               loss or damage of any nature.
             </p>
           </div>
-          <Footer />
+          <Footer device={this.state.device} />
         </div>
       </body>
     );

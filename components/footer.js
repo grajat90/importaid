@@ -4,9 +4,18 @@ import MessageButton from "./footerMessageButton";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
-export default function Footer({ toastshow }) {
+export default function Footer({ device }) {
   const router = useRouter();
-
+  const toastshow = () =>
+    toast.success("📬 Message Sent Successfully", {
+      position: "bottom-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   return (
     <footer style={styles.footer} id="footer">
       <div style={styles.container}>
@@ -61,7 +70,9 @@ export default function Footer({ toastshow }) {
               </li>
             </ul>
           </div>
-          <div style={styles.contact}>
+          <div
+            style={device == "mobile" ? styles.contactMobile : styles.contact}
+          >
             <div
               style={{
                 display: "flex",
@@ -103,22 +114,24 @@ export default function Footer({ toastshow }) {
                 </div>
               </a>
             </div>
-            <div>
-              <MessageButton toastshow={toastshow} />
+            <div style={{ marginTop: device == "mobile" ? 20 : 0 }}>
+              <MessageButton device={device} toastshow={toastshow} />
             </div>
           </div>
         </div>
         <div style={styles.two}>
-          &copy; Copyright. All rights reserved. By viewing this site you agree
-          to the&nbsp;
-          <Link href="/tnc">
-            <a>terms and conditions</a>
-          </Link>
-          &nbsp; and&nbsp;
-          <Link href="/privacypolicy">
-            <a>privacy policy</a>
-          </Link>
-          .
+          <div>
+            &copy; Copyright. All rights reserved. By viewing this site you
+            agree to the&nbsp;
+            <Link href="/tnc">
+              <a>terms and conditions</a>
+            </Link>
+            &nbsp; and&nbsp;
+            <Link href="/privacypolicy">
+              <a>privacy policy</a>
+            </Link>
+            .
+          </div>
         </div>
       </div>
       <style jsx>
@@ -187,7 +200,17 @@ const styles = {
     flex: 4,
     padding: 5,
     display: "flex",
+    flexDirection: "row",
     justifyContent: "space-around",
+    alignItems: "center",
+    fontSize: 15,
+  },
+  contactMobile: {
+    flex: 4,
+    padding: 5,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
     fontSize: 15,
   },

@@ -8,10 +8,19 @@ export default class Home extends Component {
     width: 0,
     vh: 0,
   };
+  constructor(props) {
+    super(props);
+    this.updateLayout = this.updateLayout.bind(this);
+  }
   componentDidMount() {
+    this.updateLayout();
+    window.addEventListener("resize", this.updateLayout());
+  }
+  updateLayout() {
     this.setState({
       width: window.innerWidth,
-      vh: window.innerHeight - 20,
+      height: window.innerHeight,
+      device: window.innerWidth <= 768 ? "mobile" : "desktop",
     });
   }
   render() {
@@ -27,7 +36,11 @@ export default class Home extends Component {
           <Head>
             <title>importaid. - About Us</title>
           </Head>
-          <Header selected={3} />
+          <Header
+            selected={3}
+            device={this.state.device}
+            width={this.state.width}
+          />
           <div
             style={{
               marginTop: 80,
@@ -35,6 +48,7 @@ export default class Home extends Component {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
+              width: "100%",
             }}
           >
             <div
@@ -44,6 +58,7 @@ export default class Home extends Component {
                 alignItems: "center",
                 fontWeight: 700,
                 fontSize: 50,
+                width: "100%",
               }}
             >
               About Us
@@ -103,7 +118,7 @@ export default class Home extends Component {
               </p>
             </div>
           </div>
-          <Footer />
+          <Footer device={this.state.device} />
         </div>
       </body>
     );

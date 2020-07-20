@@ -1,4 +1,5 @@
 import "react-toastify/dist/ReactToastify.css";
+import "../styles/style.css";
 import { ToastContainer, toast } from "react-toastify";
 export default function MyApp({ Component, pageProps }) {
   return (

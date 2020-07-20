@@ -16,15 +16,15 @@ export default class MyDocument extends Document {
           <meta
             name="description"
             content="Import Services in India. Have our team on field getting your work done locally and on time."
-          ></meta>
+          />
           <meta
             name="viewport"
-            content="width=device-width, initial-scale=1"
-          ></meta>
+            content="initial-scale=1.0, width=device-width"
+          />
           <meta
             name="twitter:card"
             value="Import Services in India. Have our team on field getting your work done locally and on time."
-          ></meta>
+          />
 
           <meta property="og:title" content="importaid" />
           <meta property="og:type" content="article" />

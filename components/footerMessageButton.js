@@ -8,7 +8,7 @@ AWS.config.update({
   region: process.env.NEXT_PUBLIC_AWS_DEFAULT_REGION,
 });
 const ses = new AWS.SES({ apiVersion: "2010-12-01" });
-export default function MessageButton({ toastshow }) {
+export default function MessageButton({ toastshow, device }) {
   const [hover, setHover] = useState(false);
   const [open, setOpen] = useState(false);
   const [from, setFrom] = useState(null);
@@ -75,7 +75,7 @@ export default function MessageButton({ toastshow }) {
       <ReactModal
         onRequestClose={() => setOpen(false)}
         isOpen={open}
-        style={styles.modalStyle}
+        style={device == "mobile" ? styles.modalStyleMobile : styles.modalStyle}
       >
         <form style={styles.form}>
           <input
@@ -98,14 +98,23 @@ export default function MessageButton({ toastshow }) {
           <div
             style={{
               display: "flex",
-              width: "inherit",
-              justifyContent: "flex-end",
+              flexDirection: "column",
+              width: device == "mobile" ? "100%" : "inherit",
+              justifyContent: device == "mobile" ? "center" : "flex-end",
               alignItems: "center",
             }}
           >
             <div style={styles.error}>{errorMessage}</div>
             <div
-              style={sendhover ? styles.sendactive : styles.sendinactive}
+              style={
+                sendhover
+                  ? device == "mobile"
+                    ? { ...styles.sendactive, width: "100%" }
+                    : styles.sendactive
+                  : device == "mobile"
+                  ? { ...styles.sendinactive, width: "100%" }
+                  : styles.sendinactive
+              }
               onClick={() => submit()}
               onMouseEnter={() => {
                 setSendhover(true);
@@ -153,6 +162,24 @@ const styles = {
       outlineWidth: 1,
       outlineStyle: "solid",
       width: "70vw",
+      height: "70vh",
+      fontFamily: "Raleway",
+      zIndex: 999999,
+    },
+  },
+  modalStyleMobile: {
+    overlay: {
+      backgroundColor: "#BBBBBB90",
+    },
+    content: {
+      position: "absolute",
+      top: "12vh",
+      left: "15vw",
+      borderRadius: 0,
+      outlineColor: "#000",
+      outlineWidth: 1,
+      outlineStyle: "solid",
+      width: "90vw",
       height: "70vh",
       fontFamily: "Raleway",
       zIndex: 999999,

@@ -1,9 +1,7 @@
 import { ReactSVG } from "react-svg";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
-var vwlocal = 0;
-export default function Hero({ vw }) {
-  vwlocal = vw;
+export default function Hero({ device }) {
   return (
     <>
       <div style={styles.bgKeyWords}>
@@ -16,8 +14,15 @@ export default function Hero({ vw }) {
         local expertise local people work round the clock
       </div>
       <div style={styles.container}>
-        <div style={{ display: "flex" }}>
-          <div style={styles.heroText}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: device == "mobile" ? "row" : "row",
+          }}
+        >
+          <div
+            style={device == "mobile" ? styles.heroTextMobile : styles.heroText}
+          >
             We help you build your business by providing{" "}
             <font color="#000000">import related services </font>
             such as{" "}
@@ -28,11 +33,18 @@ export default function Hero({ vw }) {
             </font>{" "}
             all over India, with local expertise that is reliable and economical
           </div>
-          <div style={styles.downArrow}>
+
+          <div
+            style={
+              device == "mobile" ? styles.downArrowMobile : styles.downArrow
+            }
+          >
             <ScrollLink to="allservices" smooth={true}>
               <ReactSVG
                 src="/arrow-down.svg"
-                style={{ width: 15, height: 15, cursor: "pointer" }}
+                style={
+                  device == "mobile" ? styles.arrowsvg : styles.arrowsvgmobile
+                }
               />
             </ScrollLink>
           </div>
@@ -54,6 +66,7 @@ const styles = {
   },
   container: {
     paddingLeft: 50,
+    paddingTop: 25,
     paddingRight: 50,
     height: "100vh",
     display: "flex",
@@ -67,11 +80,24 @@ const styles = {
     color: "#979797",
     fontSize: 26,
   },
+  heroTextMobile: {
+    flex: 10,
+    fontWeight: 300,
+    color: "#979797",
+    fontSize: 22,
+  },
   downArrow: {
     display: "flex",
     flex: 5,
     alignItems: "flex-end",
     justifyContent: "flex-start",
+    margin: 50,
+  },
+  downArrowMobile: {
+    display: "flex",
+    flex: 1,
+    alignItems: "flex-end",
+    justifyContent: "flex-end",
     margin: 50,
   },
   bluebox: {
@@ -83,4 +109,6 @@ const styles = {
     width: "75vw",
     backgroundColor: "#5790FF",
   },
+  arrowsvg: { width: 15, height: 15, cursor: "pointer" },
+  arrowsvgmobile: { width: 7, height: 7, cursor: "pointer" },
 };
