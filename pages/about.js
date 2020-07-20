@@ -108,7 +108,7 @@ export default class Home extends Component {
               </p>
               <br />
               <p>
-                <h3>Mission</h3>
+                <h3>Our Mission</h3>
                 <ul>
                   <li>Global partnership</li>
                   <li>Sustainable Business Expansion </li>
@@ -120,6 +120,11 @@ export default class Home extends Component {
           </div>
           <Footer device={this.state.device} />
         </div>
+        <style jsx>{`
+          ul {
+            list-style: none;
+          }
+        `}</style>
       </body>
     );
   }
