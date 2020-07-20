@@ -18,9 +18,11 @@ export default function MessageButton({ toastshow, device }) {
   const submit = () => {
     if (from == null || from == "" || from == " ") {
       setErrorMessage("From Field Cannot be blank");
+      setSendhover(false);
       return;
     } else if (text == null || text == "" || text == " ") {
       setErrorMessage("You can't send a blank message");
+      setSendhover(false);
       return;
     } else {
       setErrorMessage(null);
@@ -109,18 +111,15 @@ export default function MessageButton({ toastshow, device }) {
               style={
                 sendhover
                   ? device == "mobile"
-                    ? { ...styles.sendactive, width: "100%" }
-                    : styles.sendactive
+                    ? { ...styles.sendinactive, width: "100%" }
+                    : styles.sendinactive
                   : device == "mobile"
-                  ? { ...styles.sendinactive, width: "100%" }
-                  : styles.sendinactive
+                  ? { ...styles.sendactive, width: "100%" }
+                  : styles.sendactive
               }
-              onClick={() => submit()}
-              onMouseEnter={() => {
+              onClick={() => {
                 setSendhover(true);
-              }}
-              onMouseLeave={() => {
-                setSendhover(false);
+                setTimeout(submit, 100);
               }}
             >
               Send Message
