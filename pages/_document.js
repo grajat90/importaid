@@ -5,7 +5,7 @@ const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TAG;
 export default class MyDocument extends Document {
   render() {
     return (
-      <html>
+      <html lang="en">
         <Head>
           <link rel="shortcut icon" href="/favicon.ico" />
           <link
@@ -13,6 +13,8 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <meta name="theme-color" content="#000" />
+          <link rel="manifest" href="/static/manifest.json" />
+          <link rel="apple-touch-icon" href="/favicon.ico" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
             content="black-translucent"

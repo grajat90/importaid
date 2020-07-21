@@ -1,0 +1,112 @@
+{
+  "manifest_version": 2,
+  "version": "1",
+
+  "name": "importaid - Making Business Easier",
+  "description": "Import Assistance services. On ground import related various fieldwork at economical rates and with a reliable team.",
+  "short_name": "importaid",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "prefer_related_applications": false,
+
+  "default_locale": "en",
+  "icons": [
+    {
+      "src": "/favicon.jpg",
+      "type": "image/jpg",
+      "sizes": "1280x1280",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/mainlogo.jpg",
+      "type": "image/jpg",
+      "sizes": "402x90",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "offline_enabled": false,
+  "shortcuts": [
+    {
+      "name": "Home",
+      "short_name": "importaid - Home",
+      "description": "Import Assistance services. On ground import related various fieldwork at economical rates and with a reliable team.",
+      "url": "/"
+    },
+    {
+      "name": "All Services",
+      "short_name": "All services",
+      "description": "We help you with all the on ground work. View a few examples. Contact Us if you'd like to get anything else done.",
+      "url": "/#allservices"
+    },
+    {
+      "name": "Pricing",
+      "description": "Single Flat economical pricing. Reliable performance at unmatched rates.",
+      "short_name": "Pricing",
+      "url": "/#pricing"
+    },
+    {
+      "name": "Contact Us",
+      "description": "Contact Us. Call us, write a mail, or send a message from a website to emake your business easier today.",
+      "short_name": "Contact Us",
+      "url": "/#footer"
+    },
+    {
+      "name": "About Us",
+      "description": "Our goal remains to help businesses prosper and grow and to create a truly global hinderence free market. View our vision and ideology",
+      "short_name": "Pricing",
+      "url": "/about"
+    }
+  ]
+}

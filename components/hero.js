@@ -83,13 +83,13 @@ const styles = {
   heroText: {
     flex: 10,
     fontWeight: 300,
-    color: "#979797",
+    color: "#888888",
     fontSize: 26,
   },
   heroTextMobile: {
     flex: 10,
     fontWeight: 300,
-    color: "#979797",
+    color: "#888888",
     fontSize: 22,
   },
   downArrow: {
