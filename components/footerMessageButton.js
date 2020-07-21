@@ -154,7 +154,7 @@ const styles = {
     },
     content: {
       position: "absolute",
-      top: "12vh",
+      top: "15vh",
       left: "15vw",
       borderRadius: 0,
       outlineColor: "#000",
@@ -172,8 +172,8 @@ const styles = {
     },
     content: {
       position: "absolute",
-      top: "12vh",
-      left: "15vw",
+      top: "15vh",
+      left: "5vw",
       borderRadius: 0,
       outlineColor: "#000",
       outlineWidth: 1,
@@ -200,6 +200,7 @@ const styles = {
     borderWidth: 1,
     borderColor: "#000",
     borderStyle: "solid",
+    fontFamily: "Raleway",
     fontWeight: 300,
   },
   text: {
@@ -214,6 +215,7 @@ const styles = {
     borderColor: "#000",
     borderStyle: "solid",
     fontWeight: 300,
+    fontSize: 25,
   },
   sendactive: {
     cursor: "pointer",
