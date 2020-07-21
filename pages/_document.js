@@ -12,6 +12,11 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap"
             rel="stylesheet"
           />
+          <meta name="theme-color" content="#000" />
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+          />
           <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
           <meta
             name="description"
