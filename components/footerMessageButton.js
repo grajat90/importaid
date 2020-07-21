@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactModal from "react-modal";
+import { useRouter } from "next/router";
 const AWS = require("aws-sdk");
 AWS.config.update({
   accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,
@@ -15,6 +16,15 @@ export default function MessageButton({ toastshow, device }) {
   const [text, setText] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [sendhover, setSendhover] = useState(false);
+  const router = useRouter();
+  const { newmessage } = router.query;
+
+  useEffect(() => {
+    if (newmessage == "true") {
+      setOpen(true);
+      setHover(true);
+    }
+  }, [router.query.newmessage]);
   const submit = () => {
     if (from == null || from == "" || from == " ") {
       setErrorMessage("From Field Cannot be blank");
