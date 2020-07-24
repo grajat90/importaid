@@ -113,6 +113,57 @@ export default function Footer({ device }) {
                   &nbsp;contact@importaid.com
                 </div>
               </a>
+              <div
+                style={{
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: device == "mobile" ? "column" : "row",
+                  marginTop: 20,
+                }}
+              >
+                <a
+                  href="https://www.facebook.com/importaid"
+                  style={{ textDecoration: "none" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      cursor: "pointer",
+                      color: "#999999",
+                      marginRight: device == "mobile" ? null : 10,
+                      marginBottom: device == "mobile" ? 5 : null,
+                    }}
+                  >
+                    <ReactSVG
+                      src="/facebook.svg"
+                      style={{ width: 20, height: 20 }}
+                    />{" "}
+                    &nbsp;@importaid
+                  </div>
+                </a>
+                <a
+                  href="https://twitter.com/import_aid"
+                  style={{ textDecoration: "none" }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      cursor: "pointer",
+                      color: "#999999",
+                      marginLeft: device == "mobile" ? null : 10,
+                      marginTop: device == "mobile" ? 5 : null,
+                    }}
+                  >
+                    <ReactSVG
+                      src="/twitter.svg"
+                      style={{ width: 20, height: 20 }}
+                    />{" "}
+                    &nbsp;@import_aid
+                  </div>
+                </a>
+              </div>
             </div>
             <div style={{ marginTop: device == "mobile" ? 20 : 0 }}>
               <MessageButton device={device} toastshow={toastshow} />

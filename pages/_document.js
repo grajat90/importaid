@@ -29,17 +29,23 @@ export default class MyDocument extends Document {
             content="initial-scale=1.0, width=device-width"
           />
           <meta
-            name="twitter:card"
-            value="Import Assistance Services in India. Have our team on field getting your work done locally and on time. Fieldwork, inspections, market research and more at economical rates."
+            name="twitter:title"
+            content="importaid - Import Assistance from India"
           />
+          <meta
+            name="twitter:description"
+            content="Import Assistance Services in India. Have our team on field getting your work done locally and on time. Fieldwork, inspections, market research and more at economical rates."
+          />
+          <meta
+            name="twitter:image"
+            content="https://importaid.com/favicon.jpg"
+          />
+          <meta name="twitter:card" value="https://importaid.com/card.png" />
 
           <meta property="og:title" content="importaid" />
           <meta property="og:type" content="article" />
           <meta property="og:url" content="http://www.importaid.com/" />
-          <meta
-            property="og:image"
-            content="http://importaid.com/mainlogo.jpg"
-          />
+          <meta property="og:image" content="http://importaid.com/card.png" />
           <meta property="og:site_name" content="importaid.com" />
           <meta
             property="og:description"
